@@ -7,16 +7,16 @@ This project requires:<br/>
 3. Product ID decoder<br/>
 4. search function for previous blockchain<br/>
 <br/>
-Backend
-- deal only with transaction and product id
-- will need to include product id related to blockchain
+Backend<br/>
+- deal only with transaction and product id<br/>
+- will need to include product id related to blockchain<br/>
 <br/>
 Frontend<br/>
 <br/>
-Product ID decoder
-- database to store product id,
-- currently need decode country code, sector code and time
-- manufacturer ID and product bit need to add individually, (note for presentation we can release an api for a company to automatic add their own product)
+Product ID decoder<br/>
+- database to store product id,<br/>
+- currently need decode country code, sector code and time<br/>
+- manufacturer ID and product bit need to add individually, (note for presentation we can release an api for a company to automatic add their own product)<br/>
 <br/>
 Product ID - 32bit hex code<br/>
 Country Code        2 bit 196 country<br/>
