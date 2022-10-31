@@ -18,9 +18,18 @@ Product ID decoder<br/>
 - currently need decode country code, sector code and time<br/>
 - manufacturer ID and product bit need to add individually, (note for presentation we can release an api for a company to automatic add their own product)<br/>
 <br/>
-Product ID - 32bit hex code<br/>
-Country Code        2 bit 196 country<br/>
-Sector              6 bit https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard OCT -> HEX converstion <br/>
-Manufacturer ID     8 bit<br/>
-Product bit         9 bit<br/>
-Time                7 bit MMDDYY_NN M=month D=day Y=year _=Y/M/D N=number (shelf life or warraty period) DEC -> HEX<br/>
+Country Code - 3 bit Country Code<br/>
+Sector - 5 bit https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard OCT -> HEX converstion<br/>
+Manufacturer ID - 8 bit<br/>
+Product bit  - 9 bit<br/>
+Time  - 7 bit MMDDYY_NN M=month D=day Y=year _=Y/M/D N=number (shelf life or warraty period) DEC -> HEX<br/>
+<br/>
+Country Code<br/>
+1 North American Numbering Plan<br/>
+2 Mostly Africa<br/>
+3-4 Europe<br/>
+5 Americas outside the NANP<br/>
+6 Southeast Asia and Oceania<br/>
+7 Russia and neighboring countries<br/>
+8 East Asia and special services<br/>
+9 Mostly Middle East and parts of southern Asia<br/>
