@@ -112,11 +112,33 @@ Country Code
 # }
 '''
 
-transactionFile = open("transaction.txt", "w")
-for row in range(random.randint(3,10)):
-    for column in range(random.randint(2,5)):
-        if column != 0:
-            transactionFile.write("|")
-        transactionFile.write(f"{hex(random.randint(1,999))}"[2:].zfill(3)+f"{hex(random.randint(101010,601020))}"[2:].zfill(5)+f"{hex(random.randint(1,4294967295))}"[2:].zfill(8)+f"{hex(random.randint(1,68719476735))}"[2:].zfill(9)+f"{hex(random.randint(0,123199399))}"[2:].zfill(7))
-    transactionFile.write("\n")
+#file name
+argumentFile = open("argument.txt", "r")
+decodedFile = open("decoded.txt", "w")
+transactionFile = open("transaction.txt", "a")
+
+#read file and write loop
+firstCycle = True
+for line in argumentFile:
+    #format line
+    if firstCycle:
+        firstCycle = False
+    else:
+        decodedFile.write("\n")
+    
+    #read and convert to neccessary format 
+    line = line.strip().split("|")
+    countryCode = f'{hex(int(line[0]))}'[2:].zfill(3)
+    sector = f'{hex(int(line[1]))}'[2:].zfill(5)
+    manufacturerID = f'{hex(int(line[2]))}'[2:].zfill(8)
+    productID = f'{hex(int(line[3]))}'[2:].zfill(9)
+    time = f'{hex(int(line[4]))}'[2:].zfill(7)
+    
+    #write to file
+    decodedFile.write(f"{countryCode}{sector}{manufacturerID}{productID}{time}")
+    transactionFile.write(f'{countryCode}{sector}{manufacturerID}{productID}{time}\n')
+
 transactionFile.close()
+argumentFile.close()
+decodedFile.close()
+
