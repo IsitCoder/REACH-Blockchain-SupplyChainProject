@@ -12,6 +12,9 @@ Backend<br/>
 - will need to include product id related to blockchain<br/>
 <br/>
 Frontend<br/>
+Build a complete website for user to purchase item.<br/>
+Once the user purchase an item is purchased, it will run the reach api the return product id and transaction id<br/>
+Frontend also have a search function to decode or encode the product id by running IDgen.py or IDread.py<br/>
 <br/>
 Product ID decoder<br/>
 - database to store product id,<br/>
