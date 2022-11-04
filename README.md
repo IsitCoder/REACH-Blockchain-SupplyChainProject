@@ -9,12 +9,26 @@ This project requires:<br/>
 <br/>
 Backend<br/>
 - deal only with transaction and product id<br/>
-- will need to include product id related to blockchain<br/>
+- input(argument.txt) output(decoded.txt)<br/>
+- companyImport ([product ID],None) <br/>
+- companyOperation (extra, business operation will deal with this part)<br/>
+- purchasing (TBA) ([product bit], productID)<br/>
+- IDgen ([prodcutID argument with '|' delim], productID) - symmetric encoding<br/>
+- IDread ([productID], productID argument with '|' delim) - symmetric decoding<br/>
+<br/>
+Database file naming<br/>
+- companyDatabase.txt (all currently stock with materialID)<br/>
+- companyStock.txt (fast access for company stock)<br/>
+- companyProduct.txt (frontend) (front end need to access this to get all product sold in company, front end need to able to edit this)<br/>
+- argument.txt (front end output to system input)<br/>
+- decoded.txt (system output to front end input)<br/>
+- transaction.txt (extra) (currenly have no function) (need to be deleted)<br/>
+- transactionDatabase.txt (frontend) (record all seling transaction with product ID and blockchain id)<br/>
 <br/>
 Frontend<br/>
-Build a complete website for user to purchase item.<br/>
-Once the user purchase an item is purchased, it will run the reach api the return product id and transaction id<br/>
-Frontend also have a search function to decode or encode the product id by running IDgen.py or IDread.py<br/>
+- Build a complete website for user to purchase item.<br/>
+- Once the user purchase an item is purchased, it will run the reach api the return product id and transaction id<br/>
+- Frontend also have a search function to decode or encode the product id by running IDgen.py or IDread.py<br/>
 <br/>
 Product ID decoder<br/>
 - database to store product id,<br/>
