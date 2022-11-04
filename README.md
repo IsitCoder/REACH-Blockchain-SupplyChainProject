@@ -17,13 +17,13 @@ Backend<br/>
 - IDread ([productID], productID argument with '|' delim) - symmetric decoding<br/>
 <br/>
 Database file naming<br/>
-- companyDatabase.txt (all currently stock with materialID)<br/>
-- companyStock.txt (fast access for company stock)<br/>
-- companyProduct.txt (frontend) (front end need to access this to get all product sold in company, front end need to able to edit this)<br/>
-- argument.txt (front end output to system input)<br/>
-- decoded.txt (system output to front end input)<br/>
-- transaction.txt (extra) (currenly have no function) (need to be deleted)<br/>
-- transactionDatabase.txt (frontend) (record all seling transaction with product ID and blockchain id)<br/>
+- companyDatabase.txt [productID|materialID|...|materialID] (all currently stock with materialID)<br/>
+- companyStock.txt [productID|amount] (fast access for company stock)<br/>
+- companyProduct.txt [productID|name|price] (frontend) (front end need to access this to get all product sold in company, front end need to able to edit this)<br/>
+- argument.txt [no format] (front end output to system input)<br/>
+- decoded.txt [no format] (system output to front end input)<br/>
+- transaction.txt [product ID] (extra) (currenly have no function) (need to be deleted)<br/>
+- transactionDatabase.txt [product ID|blockchainID](frontend) (record all seling transaction with product ID and blockchain id)<br/>
 <br/>
 Frontend<br/>
 - Build a complete website for user to purchase item.<br/>
@@ -36,9 +36,9 @@ Product ID decoder<br/>
 - manufacturer ID and product bit need to add individually, (note for presentation we can release an api for a company to automatic add their own product)<br/>
 <br/>
 Country Code - 3 bit Country Code<br/>
-Sector - 5 bit https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard OCT -> HEX converstion<br/>
-Manufacturer ID - 8 bit<br/>
-Product bit  - 9 bit<br/>
+Sector - 7 bit https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard OCT -> HEX converstion<br/>
+Manufacturer ID - 7 bit<br/>
+Product bit  - 8 bit<br/>
 Time  - 7 bit MMDDYY_NN M=month D=day Y=year _=Y/M/D N=number (shelf life or warraty period) DEC -> HEX<br/>
 <br/>
 Country Code<br/>
