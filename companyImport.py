@@ -1,8 +1,8 @@
 stockFile = open('companyStock.txt', 'a')
-argumentFile = open('argument.txt', 'r')
+decodedFile = open('decoded.txt', 'r')
 
-for line in argumentFile:#argument is in IDgen.py format
+for line in decodedFile:#argument is in IDgen.py format
     stockFile.write(f'{line.strip()}\n')
     
-argumentFile.close()
+decodedFile.close()
 stockFile.close()

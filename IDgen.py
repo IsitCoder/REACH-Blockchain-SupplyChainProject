@@ -2,9 +2,9 @@ import random
 """
 32bit hex code
 Country Code        3 bit Country Code
-Sector              5 bit https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard OCT -> HEX converstion
-Manufacturer ID     8 bit
-Product bit         9 bit
+Sector              7 bit https://en.wikipedia.org/wiki/Global_Industry_Classification_Standard OCT -> HEX converstion
+Manufacturer ID     7 bit
+Product bit         8 bit
 Time                7 bit MMDDYY_NN M=month D=day Y=year _=Y/M/D N=number (shelf life or warraty period) DEC -> HEX
 """
 """
@@ -129,9 +129,9 @@ for line in argumentFile:
     #read and convert to neccessary format 
     line = line.strip().split("|")
     countryCode = f'{hex(int(line[0]))}'[2:].zfill(3)
-    sector = f'{hex(int(line[1]))}'[2:].zfill(5)
-    manufacturerID = f'{hex(int(line[2]))}'[2:].zfill(8)
-    productID = f'{hex(int(line[3]))}'[2:].zfill(9)
+    sector = f'{hex(int(line[1]))}'[2:].zfill(7)
+    manufacturerID = f'{hex(int(line[2]))}'[2:].zfill(7)
+    productID = f'{hex(int(line[3]))}'[2:].zfill(8)
     time = f'{hex(int(line[4]))}'[2:].zfill(7)
     
     #write to file
@@ -141,4 +141,3 @@ for line in argumentFile:
 transactionFile.close()
 argumentFile.close()
 decodedFile.close()
-
