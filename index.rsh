@@ -50,7 +50,7 @@ export const main = Reach.App(() => {
     })
     Buyer.publish(productDetail)
       .pay(amount*buyAmount)
-    transfer(amount*buyAmount*2).to(buyAmount>0 ?Seller:Buyer)
+    transfer(amount*buyAmount).to(buyAmount>0 ?Seller:Buyer)
     commit();
 
     exit();
